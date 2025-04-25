@@ -30,7 +30,7 @@ const clientOrigin = process.env.CLIENT_ORIGIN;
 
 app.use(cors({ credentials: true,
     methods:["POST","GET","PATCH","PUT","DELETE"] ,
-    origin: clientOrigin }));
+    origin: "https://brunch-frontend.vercel.app"}));
 
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log('Connected to MongoDB Atlas'))
