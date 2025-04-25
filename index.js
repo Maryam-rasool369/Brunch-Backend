@@ -28,7 +28,9 @@ const PORT = process.env.PORT || 3001;
 const secretKey = process.env.JWT_SECRET;
 const clientOrigin = process.env.CLIENT_ORIGIN;
 
-app.use(cors({ credentials: true,methods:["POST","GET","PATCH","PUT","DELETE"] ,origin: clientOrigin }));
+app.use(cors({ credentials: true,
+    methods:["POST","GET","PATCH","PUT","DELETE"] ,
+    origin: clientOrigin }));
 
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log('Connected to MongoDB Atlas'))
