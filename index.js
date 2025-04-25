@@ -97,9 +97,10 @@ app.post('/login', async(req, res) => {
 });
 
 app.get('/profile', async(req, res) => {
-    const { token } = req.cookies;
+    const { token } =await req.cookies;
 
     if (!token) {
+        console.log(req.cookies);
         return res.status(401).json({ errorMessage: "No token provided" });
     }
 
